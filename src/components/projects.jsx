@@ -10,8 +10,8 @@ import gimnasio from "../assets/gimnasio.png"
 const projects = [
   {
     title: "Barbería Elite",
-    description: "Landing page profesional + sistema administrativo para gestión de citas y servicios de barbería",
-    tech: ["React", "Tailwind CSS", "Supabase"],
+    description: "Proyecto web desarrollado como prototipo de sistema completo para una barbería, con landing page moderna y un panel de administración.",
+    tech: ["React + Vite", "Tailwind CSS","GSAP", "PostgreSQL","Node.js","Express",""],
     demoUrl: "https://abaquio.github.io/barberia-frontend/",
     githubUrl: "https://github.com/Abaquio/barberia-full",
     color: "from-primary to-accent",
@@ -19,8 +19,8 @@ const projects = [
   },
   {
     title: "Fideliza Plus",
-    description: "Sistema completo de puntos y gestión de clientes con integraciones de pagos",
-    tech: ["React", "Node.js", "Supabase"],
+    description: "Sistema de fidelización para negocios: registra clientes por RUT, asigna puntos por compra y permite generar cupones o beneficios",
+    tech: ["React + Vite", "Tailwind CSS","Lucide-React","React-Router","Node.js", "Supabase"],
     demoUrl: "https://fideliza-plus.example",
     githubUrl: "https://github.com/Abaquio/fideliza-plus",
     color: "from-accent to-secondary",
@@ -28,8 +28,8 @@ const projects = [
   },
   {
     title: "Gym System Pro",
-    description: "Plataforma de gestión de membresías, usuarios y agendamiento de clases",
-    tech: ["React", "Express.js", "MySQL"],
+    description: "Aplicación web para gestionar clientes y membresías de un gimnasio, permitiendo registrar, editar, renovar o eliminar usuarios, con estados automáticos y conexión a una base de datos",
+    tech: ["React", "Tailwind CSS","Framer Motion","Context API","Express.js", "PostgreSQL","Node.js"],
     demoUrl: "https://abaquio.github.io/gimnasio-v0/",
     githubUrl: "https://github.com/Abaquio/gimnasio-v0",
     color: "from-secondary to-primary",

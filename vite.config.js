@@ -9,4 +9,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  base: "/matias-landing/", // 👈 importante para GitHub Pages
 })

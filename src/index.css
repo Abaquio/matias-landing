@@ -1,0 +1,198 @@
+/* Tailwind v3 directives (obligatorio arriba) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==== Tokens (OKLCH) ==== */
+:root {
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.96 0 0);
+
+  --card: oklch(0.12 0.01 280);
+  --card-foreground: oklch(0.93 0 0);
+
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.93 0 0);
+
+  --primary: oklch(0.7 0.22 280);
+  --primary-foreground: oklch(0.08 0 0);
+
+  --secondary: oklch(0.65 0.2 290);
+  --secondary-foreground: oklch(0.08 0 0);
+
+  --accent: oklch(0.75 0.2 300);
+  --accent-foreground: oklch(0.08 0 0);
+
+  --muted: oklch(0.25 0.01 280);
+  --muted-foreground: oklch(0.65 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.2 0.01 280);
+  --input: oklch(0.15 0.01 280);
+  --ring: oklch(0.7 0.22 280);
+
+  --chart-1: oklch(0.7 0.22 280);
+  --chart-2: oklch(0.75 0.2 300);
+  --chart-3: oklch(0.65 0.2 290);
+  --chart-4: oklch(0.72 0.21 285);
+  --chart-5: oklch(0.68 0.22 275);
+
+  --radius: 0.625rem;
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.93 0 0);
+  --sidebar-primary: oklch(0.7 0.22 280);
+  --sidebar-primary-foreground: oklch(0.12 0 0);
+  --sidebar-accent: oklch(0.75 0.2 300);
+  --sidebar-accent-foreground: oklch(0.12 0 0);
+  --sidebar-border: oklch(0.2 0.01 280);
+  --sidebar-ring: oklch(0.7 0.22 280);
+}
+
+.dark {
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.96 0 0);
+
+  --card: oklch(0.12 0.01 280);
+  --card-foreground: oklch(0.93 0 0);
+
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.93 0 0);
+
+  --primary: oklch(0.7 0.22 280);
+  --primary-foreground: oklch(0.08 0 0);
+
+  --secondary: oklch(0.65 0.2 290);
+  --secondary-foreground: oklch(0.08 0 0);
+
+  --accent: oklch(0.75 0.2 300);
+  --accent-foreground: oklch(0.08 0 0);
+
+  --muted: oklch(0.25 0.01 280);
+  --muted-foreground: oklch(0.65 0 0);
+
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+
+  --border: oklch(0.2 0.01 280);
+  --input: oklch(0.15 0.01 280);
+  --ring: oklch(0.7 0.22 280);
+
+  --chart-1: oklch(0.7 0.22 280);
+  --chart-2: oklch(0.75 0.2 300);
+  --chart-3: oklch(0.65 0.2 290);
+  --chart-4: oklch(0.72 0.21 285);
+  --chart-5: oklch(0.68 0.22 275);
+
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.93 0 0);
+  --sidebar-primary: oklch(0.7 0.22 280);
+  --sidebar-primary-foreground: oklch(0.93 0 0);
+  --sidebar-accent: oklch(0.75 0.2 300);
+  --sidebar-accent-foreground: oklch(0.93 0 0);
+  --sidebar-border: oklch(0.2 0.01 280);
+  --sidebar-ring: oklch(0.7 0.22 280);
+}
+
+/* ===== Base ===== */
+@layer base {
+  * { @apply border-border; }
+
+  body { @apply bg-background text-foreground; }
+
+  html { scroll-behavior: smooth; }
+
+  /* Animaciones utilitarias */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+/* ===== Utilities para ring con variable CSS ===== */
+/* ==== Orbes morados animados para el HERO (OKLCH + más intensidad) ==== */
+@layer utilities {
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(72px);
+    opacity: 0.75; /* más visible */
+    pointer-events: none;
+  }
+
+  /* Orbe superior-derecha */
+  .orb-1 {
+    width: 46rem;
+    height: 46rem;
+    right: 8rem;
+    top: 4rem;
+    /* mezcla en espacio OKLab para respetar tus tokens OKLCH */
+    background: radial-gradient(
+      closest-side,
+      color-mix(in oklab, var(--primary) 42%, transparent),
+      transparent 70%
+    );
+  }
+
+  /* Orbe inferior-izquierda */
+  .orb-2 {
+    width: 52rem;
+    height: 52rem;
+    left: 6rem;
+    bottom: -8rem;
+    background: radial-gradient(
+      closest-side,
+      color-mix(in oklab, var(--accent) 34%, transparent),
+      transparent 70%
+    );
+  }
+
+  /* manchas fijas muy suaves para rellenar */
+  .spot-tr {
+    background: radial-gradient(
+      60% 60% at 72% 18%,
+      color-mix(in oklab, var(--primary) 18%, transparent),
+      transparent 60%
+    );
+  }
+  .spot-bl {
+    background: radial-gradient(
+      55% 55% at 18% 82%,
+      color-mix(in oklab, var(--accent) 15%, transparent),
+      transparent 60%
+    );
+  }
+
+  @keyframes orb-float {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    50%  { transform: translate3d(24px, -36px, 0) scale(1.08); }
+    100% { transform: translate3d(0, 0, 0) scale(1); }
+  }
+  .animate-orb      { animation: orb-float 18s ease-in-out infinite; }
+  .animate-orb-slow { animation: orb-float 26s ease-in-out infinite; }
+}
+
+/* TEST de orbes visibles */
+@layer utilities {
+  .orb-test {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 0;
+    right: 0;
+    border-radius: 9999px;
+    background: radial-gradient(circle at center, rgba(175, 0, 255, 0.5), transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+  }
+}

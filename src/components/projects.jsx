@@ -3,33 +3,37 @@
 import { motion } from "framer-motion"
 import { Github, ExternalLink } from "lucide-react"
 
+import barberElite from "../assets/elite-barber.png"
+import fidelizaPlus from "../assets/fideliza-plus.png"
+import gimnasio from "../assets/gimnasio.png"
+
 const projects = [
   {
     title: "Barbería Elite",
     description: "Landing page profesional + sistema administrativo para gestión de citas y servicios de barbería",
     tech: ["React", "Tailwind CSS", "Supabase"],
-    demoUrl: "https://demo-barberia.example",
-    githubUrl: "https://github.com/usuario/barberia-elite",
+    demoUrl: "https://abaquio.github.io/barberia-frontend/",
+    githubUrl: "https://github.com/Abaquio/barberia-full",
     color: "from-primary to-accent",
-    image: "/barberia-elite-demo.jpg",
+    image: barberElite,
   },
   {
     title: "Fideliza Plus",
     description: "Sistema completo de puntos y gestión de clientes con integraciones de pagos",
     tech: ["React", "Node.js", "Supabase"],
     demoUrl: "https://fideliza-plus.example",
-    githubUrl: "https://github.com/usuario/fideliza-plus",
+    githubUrl: "https://github.com/Abaquio/fideliza-plus",
     color: "from-accent to-secondary",
-    image: "/fideliza-plus-demo.jpg",
+    image: fidelizaPlus,
   },
   {
     title: "Gym System Pro",
     description: "Plataforma de gestión de membresías, usuarios y agendamiento de clases",
     tech: ["React", "Express.js", "MySQL"],
-    demoUrl: "https://gym-system.example",
-    githubUrl: "https://github.com/usuario/gym-system-pro",
+    demoUrl: "https://abaquio.github.io/gimnasio-v0/",
+    githubUrl: "https://github.com/Abaquio/gimnasio-v0",
     color: "from-secondary to-primary",
-    image: "/gym-system-pro-demo.jpg",
+    image: gimnasio,
   },
 ]
 

@@ -7,25 +7,25 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "contacto@mifaelwebstudio.cl",
-      href: "mailto:contacto@mifaelwebstudio.cl",
+      value: "mcoloma@mifaelwebstudio.com",
+      href: "mailto:mcoloma@mifaelwebstudio.com",
     },
     {
       icon: Phone,
       label: "Teléfono",
-      value: "+56 9 1234 5678",
-      href: "tel:+56912345678",
+      value: "+56 9 4545 6499",
+      href: "tel:+56945456499",
     },
     {
       icon: Globe,
       label: "Website",
-      value: "mifaelwebstudio.cl",
-      href: "https://mifaelwebstudio.cl",
+      value: "mifaelwebstudio.com",
+      href: "https://mifaelwebstudio.com",
     },
     {
       icon: MapPin,
       label: "Ubicación",
-      value: "Av. Ejemplo 123, Santiago, Chile",
+      value: "Chile",
       href: "#",
     },
   ]
@@ -33,23 +33,19 @@ export function Contact() {
   const socialLinks = [
     {
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/matias-sepulveda-abqo00",
       label: "LinkedIn",
     },
     {
       icon: Github,
-      href: "https://github.com",
+      href: "https://github.com/Abaquio",
       label: "GitHub",
     },
-    {
-      icon: Instagram,
-      href: "https://instagram.com",
-      label: "Instagram",
-    },
+
   ]
 
   const handleReferralEmail = () => {
-    const email = "contacto@mifaelwebstudio.cl"
+    const email = "mcoloma@mifaelwebstudio.com"
     const subject = encodeURIComponent("Referencia para Matías Sepúlveda")
     const body = encodeURIComponent(
       "Hola,\n\nTengo una recomendación de cliente para Matías Sepúlveda.\n\nSaludos."

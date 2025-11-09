@@ -8,7 +8,7 @@ export function Footer() {
   const footerLinks = [
     { label: "GitHub", href: "https://github.com", icon: Github },
     { label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-    { label: "Instagram", href: "https://instagram.com", icon: Instagram },
+
   ]
 
   return (
@@ -24,7 +24,9 @@ export function Footer() {
           >
             <h3 className="text-lg font-bold text-primary mb-2">Matías Sepúlveda</h3>
             <p className="text-muted-foreground text-sm">
-              Desarrollador Web especializado en soluciones modernas
+               Ingeniero Informatico | Analista programador 
+              <br />Django, React, HTML, CSS, Javascript, Python 💻
+              <br /> Desarrollador Full-Stack especializado en soluciones modernas
             </p>
           </motion.div>
 
@@ -60,6 +62,12 @@ export function Footer() {
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               Contacto
+            </a>
+                        <a
+              href="https://www.linkedin.com/in/matias-sepulveda-abqo00/details/certifications/"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              Certificados
             </a>
           </motion.div>
 
@@ -102,17 +110,17 @@ export function Footer() {
         >
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
             <p>
-              © {currentYear} Matías Sepúlveda — Desarrollador Web ·{" "}
+              © {currentYear} Matías Sepúlveda — Desarrollador  ·{" "}
               <span className="text-primary font-semibold">Mifael Web Studio</span>
             </p>
-            <div className="flex gap-4">
+           {/* <div className="flex gap-4">
               <a href="#" className="hover:text-primary transition-colors">
                 Política de Privacidad
               </a>
               <a href="#" className="hover:text-primary transition-colors">
                 Términos
               </a>
-            </div>
+            </div>*/}
           </div>
         </motion.div>
       </div>

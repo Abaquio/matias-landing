@@ -60,7 +60,7 @@ export function Header() {
           onClick={() => handleSmoothScroll("#contact")}
           className="hidden sm:block px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
         >
-          Recomiéndame
+          Contactame
         </motion.button>
 
         {/* Mobile Menu Toggle */}

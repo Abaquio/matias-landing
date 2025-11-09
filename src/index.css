@@ -196,3 +196,38 @@
     z-index: -1;
   }
 }
+
+/* === Fallback suave para el hero (siempre visible) === */
+@keyframes etherFloatA {
+  0%   { transform: translate(-10%, -10%) scale(1);   }
+  50%  { transform: translate( 10%,  12%) scale(1.15);}
+  100% { transform: translate(-10%, -10%) scale(1);   }
+}
+@keyframes etherFloatB {
+  0%   { transform: translate( 12%,  8%) scale(1.1); }
+  50%  { transform: translate(-12%, -10%) scale(0.95);}
+  100% { transform: translate( 12%,  8%) scale(1.1); }
+}
+/* capa base oscura + blobs morados animados */
+.ether-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 1;           /* debajo del Liquid */
+  overflow: hidden;
+}
+.ether-fallback__blob {
+  position: absolute;
+  filter: blur(60px);
+  opacity: .28;         /* sutil para que no tape el contenido */
+  will-change: transform;
+}
+.ether-fallback__a {
+  width: 60vmax; height: 60vmax; left: -10%; top: -10%;
+  background: radial-gradient(45% 45% at 50% 50%, #6b4dff 0%, rgba(107,77,255,0) 70%);
+  animation: etherFloatA 14s ease-in-out infinite;
+}
+.ether-fallback__b {
+  width: 55vmax; height: 55vmax; right: -8%; top: -6%;
+  background: radial-gradient(45% 45% at 50% 50%, #ff9ffc 0%, rgba(255,159,252,0) 70%);
+  animation: etherFloatB 18s ease-in-out infinite;
+}

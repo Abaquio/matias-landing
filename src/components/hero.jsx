@@ -1,147 +1,143 @@
-import { motion, useMotionValue, useTransform, useReducedMotion } from "framer-motion"
-import { User } from "lucide-react"
-import DecryptedText from "./animations/DecryptedText" // ✅ ruta correcta según tu carpeta
+"use client";
 
-export function Hero() {
-  const reduce = useReducedMotion()
-  const mx = useMotionValue(0)
-  const my = useMotionValue(0)
+import { motion } from "framer-motion";
+import { User } from "lucide-react";
+import DecryptedText from "./animations/DecryptedText";
+import devPng from "../assets/desarrollador-de-software.png";
 
-  const STRENGTH_1 = 60
-  const STRENGTH_2 = 80
-
-  const t1 = useTransform([mx, my], ([x, y]) =>
-    reduce ? "none" : `translate3d(${x / STRENGTH_1}px, ${y / STRENGTH_1}px, 0)`
-  )
-  const t2 = useTransform([mx, my], ([x, y]) =>
-    reduce ? "none" : `translate3d(${x / -STRENGTH_2}px, ${y / -STRENGTH_2}px, 0)`
-  )
-
-  const onMouseMove = (e) => {
-    if (reduce) return
-    const { innerWidth: w, innerHeight: h } = window
-    mx.set(e.clientX - w / 2)
-    my.set(e.clientY - h / 2)
-  }
-
+function Hero() {
   const handleSmoothScroll = (href) => {
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: "smooth" })
-  }
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
-      onMouseMove={onMouseMove}
+      className="relative isolate min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
-      {/* Fondo base */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-primary/5 to-background" />
+      {/* Fondo mejorado */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        {/* base + radiales en inline style (no los purga Tailwind) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            // shadcn/ui: usa el color del tema como base
+            backgroundColor: 'hsl(var(--background))',
+            backgroundImage: `
+              radial-gradient(900px 360px at 20% 35%, rgba(139,92,246,0.25) 0%, rgba(139,92,246,0.00) 60%),
+              radial-gradient(800px 320px at 85% 45%, rgba(168,85,247,0.18) 0%, rgba(168,85,247,0.00) 60%)
+            `
+          }}
+        />
 
-      {/* Glows con parallax */}
-      <div className="absolute inset-0 -z-5 pointer-events-none mix-blend-lighten">
-        <motion.div style={{ transform: t1 }} className="absolute inset-0 will-change-transform">
-          <div className="absolute inset-0 spot-tr spot-spin-slow" />
-          <div className="orb orb-1 drift-1" />
-        </motion.div>
-
-        <motion.div style={{ transform: t2 }} className="absolute inset-0 will-change-transform">
-          <div className="absolute inset-0 spot-bl" />
-          <div className="orb orb-2 drift-2" />
-        </motion.div>
+        {/* discos animados suaves */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          className="absolute top-12 right-10 w-80 h-80 bg-primary/12 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-10 left-10 w-[28rem] h-[28rem] bg-accent/12 rounded-full blur-3xl"
+        />
       </div>
 
-      {/* Círculos giratorios (tus motion originales) */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-        className="absolute top-10 right-10 w-72 h-72 bg-primary/15 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-        className="absolute bottom-0 left-10 w-96 h-96 bg-accent/15 rounded-full blur-3xl"
-      />
-
-      {/* Contenido principal */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-6 max-w-4xl"
-        >
-          {/* Icono animado */}
-          <div className="flex items-center justify-center gap-4 mb-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
+          {/* Columna izquierda */}
+          <div className="text-center md:text-left">
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-              className="p-4 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full border border-primary/50"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-6 max-w-3xl mx-auto md:mx-0"
             >
-              <User size={48} className="text-primary" />
+
+
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-balance">
+                <span className="text-foreground">Matías</span>{" "}
+                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                  Sepúlveda
+                </span>
+              </h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
+              >
+                Desarrollador Full Stack
+              </motion.p>
+
+              {/* DecryptedText intacto */}
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg text-muted-foreground leading-relaxed max-w-2xl"
+              >
+                <DecryptedText
+                  text={
+                    "Construyo soluciones modernas con React, Node.js y Django. Enfocado en calidad, integración y experiencia de usuario."
+                  }
+                  speed={50}
+                  sequential
+                  revealDirection="start"
+                  animateOn="view"
+                />
+              </motion.p>
+
+              {/* Botones desktop/tablet */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="hidden md:flex gap-4 pt-4"
+              >
+                <button
+                  onClick={() => handleSmoothScroll("#projects")}
+                  className="px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
+                >
+                  Ver proyectos
+                </button>
+              </motion.div>
             </motion.div>
           </div>
 
-          {/* Nombre */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-balance">
-            <span className="text-foreground">Matías</span>{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Sepúlveda
-            </span>
-          </h1>
-
-          {/* Rol */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
-          >
-            Desarrollador Web
-          </motion.p>
-
-          {/* Texto con efecto decrypt */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg leading-relaxed max-w-2xl mx-auto"
-          >
-            <DecryptedText
-              text="Construyo soluciones modernas con React, Node.js y Django. Enfocado en calidad, integración y experiencia de usuario."
-              animateOn="view-repeat"
-              revealDirection="right"
-              speed={25}
-              maxIterations={22}
-              sequential={true}
-              className="text-muted-foreground"
-              encryptedClassName="text-accent/70 tracking-wide"
-              parentClassName="inline-block"
+          {/* Columna derecha */}
+          <div className="flex flex-col items-center md:items-end">
+            {/* PNG: oculto en pantallas < 640px */}
+            <img
+              src={typeof devPng === "string" ? devPng : devPng?.src || "/desarrollador-de-software.png"}
+              alt="Desarrollador de software"
+              className="hidden sm:block w-[280px] sm:w-[360px] md:w-[420px] lg:w-[480px] h-auto filter invert drop-shadow-[0_0_18px_rgba(168,85,247,0.35)]"
+              draggable={false}
             />
-          </motion.div>
 
-          {/* Botones */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center pt-6"
-          >
-            <button
-              onClick={() => handleSmoothScroll("#projects")}
-              className="px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
-            >
-              Ver proyectos
-            </button>
-            <button
-              onClick={() => handleSmoothScroll("#contact")}
-              className="px-8 py-3 bg-transparent border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300"
-            >
-              Contactar
-            </button>
-          </motion.div>
-        </motion.div>
+            {/* Botones móviles (bajo el PNG; si PNG se oculta, igual aparecen) */}
+            <div className="flex md:hidden gap-4 mt-6">
+              <button
+                onClick={() => handleSmoothScroll("#projects")}
+                className="px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300"
+              >
+                Ver proyectos
+              </button>
+              <button
+                onClick={() => handleSmoothScroll("#contact")}
+                className="px-6 py-3 bg-transparent border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300"
+              >
+                Contactar
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
+
+export default Hero;
+export { Hero };

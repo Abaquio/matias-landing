@@ -7,6 +7,7 @@ import { AboutMe } from "./components/about-me"
 import { Contact } from "./components/contact"
 import { Footer } from "./components/footer"
 
+
 export default function App() {
   return (
     <main className="w-full overflow-hidden bg-background text-foreground">

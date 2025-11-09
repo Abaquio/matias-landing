@@ -24,12 +24,11 @@ const techLogos = [
 
 const skillCategories = [
   { title: "Lenguajes", skills: ["JavaScript", "Python", "SQL"], icon: Code2, color: "from-primary to-accent", iconColor: "text-primary" },
-  { title: "Frontend", skills: ["React", "Tailwind CSS", "Material-UI", "Bootstrap"], icon: Layout, color: "from-accent to-primary", iconColor: "text-accent" },
+  { title: "Frontend", skills: ["React", "Tailwind CSS", "Material-UI", "Bootstrap", "Figma"], icon: Layout, color: "from-accent to-primary", iconColor: "text-accent" },
   { title: "Backend", skills: ["Node.js", "Express.js", "Django"], icon: Server, color: "from-primary via-accent to-primary", iconColor: "text-primary" },
   { title: "Bases de Datos", skills: ["MySQL", "MongoDB", "SQL Server"], icon: Database, color: "from-accent to-primary", iconColor: "text-accent" },
   { title: "Versionado y Colaboración", skills: ["Git", "GitHub"], icon: GitBranch, color: "from-primary to-secondary", iconColor: "text-primary" },
-  { title: "Diseño/UI", skills: ["Figma"], icon: Palette, color: "from-secondary to-accent", iconColor: "text-secondary" },
-  { title: "Ecosistema", skills: ["MERN Stack"], icon: Zap, color: "from-accent to-secondary", iconColor: "text-accent" },
+  { title: "Habilidades blandas", skills: ["Comunicación efectiva ","Resolución de problemas","Adaptabilidad","Resiliencia"], icon: Zap, color: "from-accent to-secondary", iconColor: "text-accent" },
 ]
 
 export function Skills() {
@@ -56,7 +55,6 @@ export function Skills() {
               direction="left"
               logoHeight={42}
               gap={60}
-              pauseOnHover
               scaleOnHover
               fadeOut
               fadeOutColor="transparent"

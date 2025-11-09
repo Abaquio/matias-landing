@@ -81,9 +81,9 @@ export function AboutMe() {
           >
             <div className="text-center">
               <p className="text-3xl font-bold text-primary">
-                <CountUpNumber target={5} duration={1.6} />+
+                <CountUpNumber target={4} duration={1.6} />+
               </p>
-              <p className="text-muted-foreground text-sm mt-2">Proyectos</p>
+              <p className="text-muted-foreground text-sm mt-2">Certificados</p>
             </div>
             <div className="text-center">
               <p className="text-3xl font-bold text-accent">

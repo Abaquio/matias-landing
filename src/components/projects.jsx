@@ -21,7 +21,7 @@ const projects = [
     title: "Fideliza Plus",
     description: "Sistema de fidelización para negocios: registra clientes por RUT, asigna puntos por compra y permite generar cupones o beneficios",
     tech: ["React + Vite", "Tailwind CSS","Lucide-React","React-Router","Node.js", "Supabase"],
-    demoUrl: "https://fideliza-plus.example",
+    demoUrl: "https://abaquio.github.io/dashboard",
     githubUrl: "https://github.com/Abaquio/fideliza-plus",
     color: "from-accent to-secondary",
     image: fidelizaPlus,

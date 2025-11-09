@@ -28,7 +28,7 @@ const projects = [
   },
   {
     title: "Gym System Pro",
-    description: "Aplicación web para gestionar clientes y membresías de un gimnasio, permitiendo registrar, editar, renovar o eliminar usuarios, con estados automáticos y conexión a una base de datos",
+    description: "Aplicación web para gestionar clientes y membresías de un gimnasio, permitiendo registrar, editar, renovar o eliminar usuarios, con estados automáticos y conexión a una base de datos externa",
     tech: ["React", "Tailwind CSS","Framer Motion","Context API","Express.js", "PostgreSQL","Node.js"],
     demoUrl: "https://abaquio.github.io/gimnasio-v0/",
     githubUrl: "https://github.com/Abaquio/gimnasio-v0",

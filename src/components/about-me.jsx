@@ -57,9 +57,9 @@ export function AboutMe() {
             className="text-lg text-muted-foreground leading-relaxed space-y-4"
           >
             <span className="block">
-              Egresado de <span className="font-semibold text-foreground">Analista Programador</span> y estudiante de{" "}
-              <span className="font-semibold text-foreground">Ingeniería en Informática</span>. Apasionado por el
-              desarrollo web, integración de sistemas y bases de datos.
+              <span className="font-semibold text-foreground">Analista Programador</span> y cursando último semestre de{" "}
+              <span className="font-semibold text-foreground">Ingeniería en Informática</span>. Con más de 4 años de experiencia 
+              en el desarrollo de proyectos web, integración de sistemas y gestión de bases de datos.
             </span>
             <span className="block">
               Me especializo en crear soluciones escalables y performantes usando tecnologías modernas. Valoro la

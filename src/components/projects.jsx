@@ -6,6 +6,7 @@ import { Github, ExternalLink } from "lucide-react"
 import barberElite from "../assets/elite-barber.png"
 import fidelizaPlus from "../assets/fideliza-plus.png"
 import gimnasio from "../assets/gimnasio.png"
+import universoCreativo from "../assets/universo.png";
 
 const projects = [
   {
@@ -16,6 +17,23 @@ const projects = [
     githubUrl: "https://github.com/Abaquio/barberia-full",
     color: "from-primary to-accent",
     image: barberElite,
+  },
+  {
+    title: "Universo Creativo",
+    description:
+      "Landing page desarrollada para una pyme de papelería artesanal y diseño personalizado. Combina animaciones modernas (GSAP, parallax y card swap 3D) con una estética cálida y profesional que refleja el espíritu creativo del emprendimiento. Incluye secciones informativas, fondo interactivo, contadores dinámicos y un footer con mapa de ubicación. Diseñada como base escalable para futuros módulos administrables y e-commerce.",
+    tech: [
+      "React + Vite",
+      "Tailwind CSS",
+      "GSAP",
+      "React Bits (custom)",
+      "CountUp.js",
+      "Vercel (deploy)"
+    ],
+    demoUrl: "https://universo-creativo.vercel.app/", // reemplaza cuando esté online
+    githubUrl: "https://github.com/abaquio/universo-creativo", // repo del proyecto
+    color: "from-primary to-accent",
+    image: universoCreativo, // importa tu cover: import universoCreativo from "@/assets/cover-universo-creativo.jpg"
   },
   {
     title: "Fideliza Plus",
